@@ -1,0 +1,3495 @@
+<!doctype html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Claro Honduras - Tu tienda de celulares importados, routers, cables y accesorios. Los mejores precios en tecnología.">
+  <title>Claro Honduras | Tienda de Celulares y Tecnología</title><!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"><!-- Elements SDK -->
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        /* ==================== CSS VARIABLES ==================== */
+        :root {
+            --claro-red: #DA291C;
+            --claro-red-dark: #B71C1C;
+            --claro-red-light: #FF5252;
+            --white: #FFFFFF;
+            --gray-50: #FAFAFA;
+            --gray-100: #F5F5F5;
+            --gray-200: #EEEEEE;
+            --gray-300: #E0E0E0;
+            --gray-400: #BDBDBD;
+            --gray-500: #9E9E9E;
+            --gray-600: #757575;
+            --gray-700: #616161;
+            --gray-800: #424242;
+            --gray-900: #212121;
+            --success: #4CAF50;
+            --warning: #FF9800;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.15);
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 30px;
+        }
+
+        /* ==================== RESET & BASE ==================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background: var(--white);
+            height: 100%;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        /* ==================== UTILITY CLASSES ==================== */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--gray-900);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            border-radius: var(--border-radius-xl);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--claro-red) 0%, var(--claro-red-dark) 100%);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(218, 41, 28, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(218, 41, 28, 0.5);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--claro-red);
+            border: 2px solid var(--claro-red);
+        }
+
+        .btn-secondary:hover {
+            background: var(--claro-red);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        /* ==================== HEADER & NAVIGATION ==================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            z-index: 1001;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--claro-red) 0%, var(--claro-red-dark) 100%);
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--claro-red);
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-desktop {
+            display: none;
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 10px 18px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--claro-red);
+            border-radius: 2px;
+            transform: translateX(-50%);
+            transition: width var(--transition-normal);
+        }
+
+        .nav-link:hover {
+            color: var(--claro-red);
+        }
+
+        .nav-link:hover::after {
+            width: 60%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cart-btn {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            background: var(--gray-100);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cart-btn:hover {
+            background: var(--claro-red);
+            transform: scale(1.1);
+        }
+
+        .cart-btn:hover svg {
+            stroke: var(--white);
+        }
+
+        .cart-btn svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--gray-700);
+            transition: stroke var(--transition-fast);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            min-width: 22px;
+            height: 22px;
+            background: var(--claro-red);
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: bounce 0.5s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+
+        .mobile-menu-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 8px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--gray-800);
+            border-radius: 2px;
+            transition: all var(--transition-normal);
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--white);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            transform: translateX(100%);
+            transition: transform var(--transition-normal);
+        }
+
+        .mobile-nav.active {
+            transform: translateX(0);
+        }
+
+        .mobile-nav .nav-link {
+            font-size: 1.5rem;
+            padding: 15px 30px;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            position: relative;
+            min-height: 100%;
+            padding: 120px 20px 80px;
+            background: linear-gradient(135deg, #FFF5F5 0%, #FFFFFF 50%, #FFF0F0 100%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(218, 41, 28, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(218, 41, 28, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(218, 41, 28, 0.03) 0%, transparent 30%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text {
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(218, 41, 28, 0.1);
+            border-radius: var(--border-radius-xl);
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--claro-red);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .hero-badge-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--claro-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            font-weight: 800;
+            color: var(--gray-900);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+
+        .hero-title-highlight {
+            background: linear-gradient(135deg, var(--claro-red) 0%, var(--claro-red-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--gray-600);
+            max-width: 500px;
+            margin: 0 auto 32px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 48px;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-stat {
+            text-align: center;
+            padding: 20px 10px;
+            background: var(--white);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .hero-stat-number {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 800;
+            color: var(--claro-red);
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease 0.5s both;
+        }
+
+        .hero-phone-mockup {
+            position: relative;
+            width: 280px;
+            height: 500px;
+            background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: var(--shadow-xl);
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: perspective(1000px) rotateY(-5deg) rotateX(5deg) translateY(0); }
+            50% { transform: perspective(1000px) rotateY(-5deg) rotateX(5deg) translateY(-20px); }
+        }
+
+        .hero-phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--claro-red) 0%, var(--claro-red-dark) 100%);
+            border-radius: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-phone-screen::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+
+        .phone-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--white);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .phone-flag {
+            font-size: 3rem;
+            animation: wave 2s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== BENEFITS SECTION ==================== */
+        .benefits {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            position: relative;
+            padding: 32px 24px;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--claro-red) 0%, var(--claro-red-light) 100%);
+            transform: scaleY(0);
+            transition: transform var(--transition-normal);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .benefit-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(218, 41, 28, 0.1) 0%, rgba(218, 41, 28, 0.05) 100%);
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .benefit-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+
+        .benefit-text {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* ==================== FEATURED PRODUCTS ==================== */
+        .featured {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            position: relative;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: all var(--transition-normal);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            padding: 6px 14px;
+            background: var(--success);
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: var(--border-radius-xl);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+
+        .product-badge.imported {
+            background: var(--claro-red);
+        }
+
+        .product-image-container {
+            position: relative;
+            height: 220px;
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-50) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image {
+            max-width: 70%;
+            max-height: 180px;
+            object-fit: contain;
+            transition: transform var(--transition-normal);
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .product-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, transparent 100%);
+            display: flex;
+            gap: 10px;
+            transform: translateY(100%);
+            transition: transform var(--transition-normal);
+        }
+
+        .product-card:hover .product-overlay {
+            transform: translateY(0);
+        }
+
+        .product-overlay .btn {
+            flex: 1;
+            padding: 12px;
+            font-size: 0.85rem;
+        }
+
+        .product-info {
+            padding: 24px;
+        }
+
+        .product-brand {
+            font-size: 0.8rem;
+            color: var(--claro-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .product-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .product-spec {
+            padding: 4px 10px;
+            background: var(--gray-100);
+            border-radius: var(--border-radius-sm);
+            font-size: 0.75rem;
+            color: var(--gray-600);
+        }
+
+        .product-price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--claro-red);
+        }
+
+        .product-price-currency {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray-500);
+        }
+
+        .add-to-cart-btn {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--claro-red) 0%, var(--claro-red-dark) 100%);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-normal);
+            box-shadow: var(--shadow-md);
+        }
+
+        .add-to-cart-btn:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .add-to-cart-btn svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--white);
+        }
+
+        /* ==================== SERVICES SECTION ==================== */
+        .services {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            position: relative;
+            padding: 32px 24px;
+            background: linear-gradient(135deg, var(--claro-red) 0%, var(--claro-red-dark) 100%);
+            border-radius: var(--border-radius-lg);
+            color: var(--white);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transition: all var(--transition-slow);
+        }
+
+        .service-card:hover::before {
+            transform: translate(20%, 20%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .service-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .service-card.light {
+            background: var(--white);
+            color: var(--gray-900);
+            border: 2px solid var(--gray-200);
+        }
+
+        .service-card.light .service-title {
+            color: var(--claro-red);
+        }
+
+        .service-card.light .service-desc {
+            color: var(--gray-600);
+        }
+
+        /* ==================== ABOUT SECTION ==================== */
+        .about {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #FFF5F5 0%, #FFFFFF 100%);
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--gray-600);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            background: var(--white);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .about-feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--claro-red) 0%, var(--claro-red-dark) 100%);
+            border-radius: var(--border-radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .about-feature-text h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+
+        .about-feature-text p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin: 0;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-image-container {
+            position: relative;
+            background: linear-gradient(135deg, var(--claro-red) 0%, var(--claro-red-dark) 100%);
+            border-radius: var(--border-radius-xl);
+            padding: 40px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .about-logo-large {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .about-flag {
+            font-size: 5rem;
+            margin-bottom: 16px;
+        }
+
+        .about-tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* ==================== TESTIMONIALS ==================== */
+        .testimonials {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            padding: 32px;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            transition: all var(--transition-normal);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .testimonial-quote {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            font-size: 4rem;
+            color: var(--claro-red);
+            opacity: 0.1;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .testimonial-avatar {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--claro-red) 0%, var(--claro-red-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .testimonial-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .testimonial-location {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-top: 4px;
+        }
+
+        .testimonial-stars span {
+            color: #FFB800;
+            font-size: 0.9rem;
+        }
+
+        /* ==================== CATALOG SECTION ==================== */
+        .catalog {
+            padding: 100px 20px 80px;
+            background: var(--gray-50);
+            min-height: 100%;
+        }
+
+        .catalog-header {
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+
+        .catalog-filters {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 24px;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 32px;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px 14px 50px;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--border-radius-xl);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all var(--transition-fast);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--claro-red);
+            box-shadow: 0 0 0 4px rgba(218, 41, 28, 0.1);
+        }
+
+        .search-box svg {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            stroke: var(--gray-400);
+        }
+
+        .filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .filter-select {
+            padding: 12px 20px;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--border-radius-xl);
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            background: var(--white);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--claro-red);
+        }
+
+        .catalog-results {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            margin-bottom: 24px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .catalog-results span {
+            font-weight: 700;
+            color: var(--claro-red);
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .no-results-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .no-results h3 {
+            font-size: 1.5rem;
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+
+        .no-results p {
+            color: var(--gray-600);
+        }
+
+        /* ==================== CART SECTION ==================== */
+        .cart-section {
+            padding: 100px 20px 80px;
+            background: var(--gray-50);
+            min-height: 100%;
+        }
+
+        .cart-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 80px 20px;
+            background: var(--white);
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-md);
+        }
+
+        .cart-empty-icon {
+            font-size: 5rem;
+            margin-bottom: 24px;
+            opacity: 0.5;
+        }
+
+        .cart-empty h3 {
+            font-size: 1.8rem;
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+
+        .cart-empty p {
+            color: var(--gray-600);
+            margin-bottom: 32px;
+        }
+
+        .cart-items {
+            background: var(--white);
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 16px;
+            padding: 24px;
+            border-bottom: 1px solid var(--gray-200);
+            align-items: center;
+            transition: background var(--transition-fast);
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item:hover {
+            background: var(--gray-50);
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            background: var(--gray-100);
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .cart-item-image img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+
+        .cart-item-specs {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-bottom: 12px;
+        }
+
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            background: var(--gray-100);
+            border-radius: var(--border-radius-xl);
+            overflow: hidden;
+        }
+
+        .quantity-btn {
+            width: 36px;
+            height: 36px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--gray-700);
+            transition: all var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity-btn:hover {
+            background: var(--claro-red);
+            color: var(--white);
+        }
+
+        .quantity-value {
+            width: 40px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .cart-item-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--claro-red);
+        }
+
+        .remove-btn {
+            width: 36px;
+            height: 36px;
+            background: var(--gray-100);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+        }
+
+        .remove-btn:hover {
+            background: #FF5252;
+            color: var(--white);
+        }
+
+        .remove-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+        }
+
+        .cart-summary {
+            background: var(--white);
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-md);
+            padding: 32px;
+        }
+
+        .cart-summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .cart-summary-row:last-of-type {
+            border-bottom: none;
+            padding-top: 20px;
+            margin-top: 8px;
+        }
+
+        .cart-summary-label {
+            font-size: 1rem;
+            color: var(--gray-600);
+        }
+
+        .cart-summary-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .cart-total-label {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+
+        .cart-total-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--claro-red);
+        }
+
+        .cart-note {
+            margin-top: 20px;
+            padding: 16px;
+            background: rgba(218, 41, 28, 0.05);
+            border-radius: var(--border-radius-md);
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            text-align: center;
+        }
+
+        .cart-note strong {
+            color: var(--claro-red);
+        }
+
+        .cart-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        /* ==================== CONTACT SECTION ==================== */
+        .contact {
+            padding: 100px 20px 80px;
+            background: linear-gradient(135deg, #FFF5F5 0%, #FFFFFF 100%);
+            min-height: 100%;
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+
+        .contact-info p {
+            color: var(--gray-600);
+            line-height: 1.8;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: var(--white);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+        }
+
+        .contact-method:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-method-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--claro-red) 0%, var(--claro-red-dark) 100%);
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-method-text h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+
+        .contact-method-text p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            margin: 0;
+        }
+
+        .contact-form-container {
+            background: var(--white);
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-lg);
+            padding: 40px 24px;
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--border-radius-md);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all var(--transition-fast);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--claro-red);
+            box-shadow: 0 0 0 4px rgba(218, 41, 28, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: linear-gradient(135deg, var(--gray-900) 0%, #1a1a1a 100%);
+            color: var(--white);
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand {
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .footer-logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--claro-red) 0%, var(--claro-red-dark) 100%);
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .footer-desc {
+            color: var(--gray-400);
+            line-height: 1.8;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .footer-section h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .footer-links {
+            list-style: none;
+            text-align: center;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--claro-red);
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all var(--transition-normal);
+        }
+
+        .footer-social a:hover {
+            background: var(--claro-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom a {
+            color: var(--claro-red);
+            text-decoration: none;
+        }
+
+        /* ==================== FLOATING WHATSAPP ==================== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+        }
+
+        .whatsapp-float a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            border-radius: 50%;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all var(--transition-normal);
+            font-size: 1.8rem;
+        }
+
+        .whatsapp-float a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--white);
+            padding: 10px 16px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-normal);
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ==================== TOAST NOTIFICATIONS ==================== */
+        .toast-container {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: var(--white);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-lg);
+            transform: translateX(120%);
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        .toast.success {
+            border-left: 4px solid var(--success);
+        }
+
+        .toast.error {
+            border-left: 4px solid #FF5252;
+        }
+
+        @keyframes slideIn {
+            to { transform: translateX(0); }
+        }
+
+        .toast-icon {
+            font-size: 1.3rem;
+        }
+
+        .toast-message {
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+
+        .toast-close {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--gray-400);
+            cursor: pointer;
+            padding: 4px;
+            margin-left: auto;
+        }
+
+        /* ==================== SECTION VISIBILITY ==================== */
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* ==================== RESPONSIVE STYLES ==================== */
+        @media (min-width: 480px) {
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .cart-item {
+                grid-template-columns: 100px 1fr auto;
+            }
+
+            .cart-item-image {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .products-grid,
+            .catalog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .filter-group {
+                flex-wrap: nowrap;
+            }
+
+            .cart-actions {
+                flex-direction: row;
+            }
+
+            .contact-buttons {
+                flex-direction: row;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .nav-desktop {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .mobile-menu-btn {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+                text-align: left;
+            }
+
+            .hero-text {
+                text-align: left;
+            }
+
+            .hero-subtitle {
+                margin-left: 0;
+            }
+
+            .hero-buttons {
+                justify-content: flex-start;
+            }
+
+            .hero-stats {
+                justify-content: flex-start;
+            }
+
+            .catalog-filters {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-form-container {
+                padding: 40px;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                text-align: left;
+            }
+
+            .footer-brand {
+                text-align: left;
+            }
+
+            .footer-desc {
+                margin: 0;
+            }
+
+            .footer-section h4 {
+                text-align: left;
+            }
+
+            .footer-links {
+                text-align: left;
+            }
+
+            .footer-social {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .products-grid,
+            .catalog-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .catalog-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- ==================== HEADER ==================== -->
+  <header class="header" id="header">
+   <div class="header-content"><a href="#" class="logo" onclick="navigateTo('home'); return false;">
+     <div class="logo-icon"><span style="font-size: 1.5rem;">🇭🇳</span>
+     </div>
+     <div class="logo-text"><span class="logo-name">Claro HN</span> <span class="logo-tagline">Honduras</span>
+     </div></a>
+    <nav class="nav-desktop"><a href="#" class="nav-link" onclick="navigateTo('home'); return false;">Inicio</a> <a href="#" class="nav-link" onclick="navigateTo('about'); return false;">Quiénes Somos</a> <a href="#" class="nav-link" onclick="navigateTo('catalog'); return false;">Catálogo</a> <a href="#" class="nav-link" onclick="navigateTo('contact'); return false;">Contáctanos</a>
+    </nav>
+    <div class="header-actions"><button class="cart-btn" onclick="navigateTo('cart')" aria-label="Ver carrito">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+      </svg><span class="cart-count" id="cart-count" style="display: none;">0</span> </button> <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menú"> <span></span> <span></span> <span></span> </button>
+    </div>
+   </div>
+  </header><!-- Mobile Navigation -->
+  <nav class="mobile-nav" id="mobile-nav"><a href="#" class="nav-link" onclick="navigateTo('home'); closeMobileMenu(); return false;">Inicio</a> <a href="#" class="nav-link" onclick="navigateTo('about'); closeMobileMenu(); return false;">Quiénes Somos</a> <a href="#" class="nav-link" onclick="navigateTo('catalog'); closeMobileMenu(); return false;">Catálogo</a> <a href="#" class="nav-link" onclick="navigateTo('cart'); closeMobileMenu(); return false;">Carrito</a> <a href="#" class="nav-link" onclick="navigateTo('contact'); closeMobileMenu(); return false;">Contáctanos</a>
+  </nav><!-- ==================== HOME SECTION ==================== -->
+  <section class="section active" id="home-section"><!-- Hero -->
+   <div class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-content">
+     <div class="hero-text">
+      <div class="hero-badge"><span class="hero-badge-dot"></span> <span class="hero-badge-text">Envíos a todo Honduras</span>
+      </div>
+      <h1 class="hero-title" id="hero-title">Conecta tu mundo con <span class="hero-title-highlight">Claro Honduras</span></h1>
+      <p class="hero-subtitle" id="hero-subtitle">Los mejores celulares importados, routers, cables y accesorios tecnológicos con garantía y los precios más competitivos del mercado.</p>
+      <div class="hero-buttons"><button class="btn btn-primary" onclick="navigateTo('catalog')"> <span>Ver Catálogo</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg></button> <a href="https://wa.me/50497422946?text=Hola%20%F0%9F%91%8B%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"> <span>💬</span> <span>WhatsApp</span> </a>
+      </div>
+      <div class="hero-stats">
+       <div class="hero-stat">
+        <div class="hero-stat-number">
+         500+
+        </div>
+        <div class="hero-stat-label">
+         Clientes
+        </div>
+       </div>
+       <div class="hero-stat">
+        <div class="hero-stat-number">
+         100%
+        </div>
+        <div class="hero-stat-label">
+         Originales
+        </div>
+       </div>
+       <div class="hero-stat">
+        <div class="hero-stat-number">
+         24/7
+        </div>
+        <div class="hero-stat-label">
+         Soporte
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="hero-visual">
+      <div class="hero-phone-mockup">
+       <div class="hero-phone-screen">
+        <div class="phone-flag">
+         🇭🇳
+        </div>
+        <div class="phone-logo">
+         CLARO
+        </div>
+        <div style="font-size: 0.9rem; opacity: 0.9;">
+         Honduras
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div><!-- Benefits -->
+   <div class="benefits">
+    <div class="container">
+     <h2 class="section-title">¿Por qué elegirnos?</h2>
+     <p class="section-subtitle">Más de 5 años brindando la mejor tecnología a Honduras con garantía y confianza</p>
+     <div class="benefits-grid">
+      <div class="benefit-card">
+       <div class="benefit-icon">
+        🛡️
+       </div>
+       <h3 class="benefit-title">Garantía Real</h3>
+       <p class="benefit-text">Todos nuestros productos cuentan con garantía de 6 a 12 meses. Respaldamos cada venta.</p>
+      </div>
+      <div class="benefit-card">
+       <div class="benefit-icon">
+        ✈️
+       </div>
+       <h3 class="benefit-title">Importación Directa</h3>
+       <p class="benefit-text">Traemos equipos directamente de fábrica, garantizando autenticidad y mejores precios.</p>
+      </div>
+      <div class="benefit-card">
+       <div class="benefit-icon">
+        🚚
+       </div>
+       <h3 class="benefit-title">Envíos Seguros</h3>
+       <p class="benefit-text">Entregamos a todo Honduras. Empaque seguro y seguimiento de tu pedido en tiempo real.</p>
+      </div>
+      <div class="benefit-card">
+       <div class="benefit-icon">
+        💳
+       </div>
+       <h3 class="benefit-title">Facilidades de Pago</h3>
+       <p class="benefit-text">Aceptamos transferencias, depósitos y pagos en efectivo. Financiamiento disponible.</p>
+      </div>
+     </div>
+    </div>
+   </div><!-- Featured Products -->
+   <div class="featured">
+    <div class="container">
+     <h2 class="section-title">Celulares Destacados</h2>
+     <p class="section-subtitle">Los equipos más buscados con los mejores precios del mercado hondureño</p>
+     <div class="products-grid" id="featured-products"><!-- Products will be loaded dynamically -->
+     </div>
+     <div style="text-align: center; margin-top: 48px;"><button class="btn btn-primary" onclick="navigateTo('catalog')"> Ver Todo el Catálogo 
+       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+       </svg></button>
+     </div>
+    </div>
+   </div><!-- Services -->
+   <div class="services">
+    <div class="container">
+     <h2 class="section-title">Nuestros Servicios</h2>
+     <p class="section-subtitle">Más que celulares, somos tu aliado tecnológico en Honduras</p>
+     <div class="services-grid">
+      <div class="service-card" onclick="navigateTo('celulares')">
+       <div class="service-icon">
+        📱
+       </div>
+       <h3 class="service-title">Celulares</h3>
+       <p class="service-desc">Smartphones de todas las marcas, nuevos e importados.</p>
+      </div>
+      <div class="service-card light" onclick="navigateTo('internet')">
+       <div class="service-icon">
+        📶
+       </div>
+       <h3 class="service-title">Internet</h3>
+       <p class="service-desc">Paquetes de internet hogar y móvil. Routers y módems.</p>
+      </div>
+      <div class="service-card" onclick="navigateTo('recargas')">
+       <div class="service-icon">
+        💰
+       </div>
+       <h3 class="service-title">Recargas</h3>
+       <p class="service-desc">Recargas y super recargas Claro. Paquetes de datos.</p>
+      </div>
+      <div class="service-card light" onclick="navigateTo('entretenimiento')">
+       <div class="service-icon">
+        🎮
+       </div>
+       <h3 class="service-title">Entretenimiento</h3>
+       <p class="service-desc">Claro Video, música y más servicios digitales.</p>
+      </div>
+      <div class="service-card light" onclick="navigateTo('accesorios')">
+       <div class="service-icon">
+        🔌
+       </div>
+       <h3 class="service-title">Accesorios</h3>
+       <p class="service-desc">Cables, cargadores, USB, audífonos y más.</p>
+      </div>
+      <div class="service-card" onclick="navigateTo('hogar')">
+       <div class="service-icon">
+        🏠
+       </div>
+       <h3 class="service-title">Hogar</h3>
+       <p class="service-desc">Soluciones de conectividad para tu casa.</p>
+      </div>
+      <div class="service-card" onclick="navigateTo('pagos')">
+       <div class="service-icon">
+        💳
+       </div>
+       <h3 class="service-title">Pagos</h3>
+       <p class="service-desc">Paga tus servicios Claro de forma fácil.</p>
+      </div>
+      <div class="service-card light" onclick="navigateTo('soporte')">
+       <div class="service-icon">
+        🛠️
+       </div>
+       <h3 class="service-title">Soporte</h3>
+       <p class="service-desc">Asistencia técnica y servicio al cliente 24/7.</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- ==================== ABOUT SECTION ==================== -->
+  <section class="section" id="about-section">
+   <div class="about">
+    <div class="about-content">
+     <div class="about-text">
+      <h2 class="section-title" style="text-align: left;">Quiénes Somos</h2>
+      <h3>Tu tienda de confianza en tecnología móvil</h3>
+      <p>Somos <strong>Claro Honduras</strong>, una empresa hondureña dedicada a la importación y venta de celulares, routers, cables y accesorios tecnológicos de las mejores marcas del mundo. Desde hace más de 5 años, nos hemos comprometido a ofrecer productos originales con garantía real a precios accesibles.</p>
+      <p>Nuestro proceso de importación es transparente y seguro. Trabajamos directamente con distribuidores autorizados en Estados Unidos, China y Europa, garantizando que cada producto que llega a tus manos sea 100% original y con la mejor calidad.</p>
+      <p>Creemos en la honestidad, el buen servicio y la satisfacción del cliente. Por eso, cada compra viene respaldada con garantía escrita, soporte técnico y la promesa de que estaremos contigo en cada paso.</p>
+      <div class="about-features">
+       <div class="about-feature">
+        <div class="about-feature-icon">
+         ✅
+        </div>
+        <div class="about-feature-text">
+         <h4>Productos Originales</h4>
+         <p>100% autenticidad garantizada</p>
+        </div>
+       </div>
+       <div class="about-feature">
+        <div class="about-feature-icon">
+         🔒
+        </div>
+        <div class="about-feature-text">
+         <h4>Compra Segura</h4>
+         <p>Proceso transparente y confiable</p>
+        </div>
+       </div>
+       <div class="about-feature">
+        <div class="about-feature-icon">
+         ⭐
+        </div>
+        <div class="about-feature-text">
+         <h4>500+ Clientes Felices</h4>
+         <p>Testimonios verificados</p>
+        </div>
+       </div>
+       <div class="about-feature">
+        <div class="about-feature-icon">
+         📞
+        </div>
+        <div class="about-feature-text">
+         <h4>Soporte 24/7</h4>
+         <p>Siempre disponibles para ti</p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="about-visual">
+      <div class="about-image-container">
+       <div class="about-flag">
+        🇭🇳
+       </div>
+       <div class="about-logo-large">
+        CLARO
+       </div>
+       <p class="about-tagline">Conectando Honduras al mundo</p>
+      </div>
+     </div>
+    </div>
+   </div><!-- Testimonials -->
+   <div class="testimonials">
+    <div class="container">
+     <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+     <p class="section-subtitle">Testimonios reales de personas que confían en nosotros</p>
+     <div class="testimonials-grid">
+      <div class="testimonial-card"><span class="testimonial-quote">"</span>
+       <p class="testimonial-text">Excelente servicio! Compré mi iPhone 15 Pro y llegó en perfectas condiciones. El precio fue mucho mejor que en otras tiendas y la garantía me da tranquilidad.</p>
+       <div class="testimonial-author">
+        <div class="testimonial-avatar">
+         MR
+        </div>
+        <div>
+         <div class="testimonial-name">
+          María Rodr  guez
+         </div>
+         <div class="testimonial-location">
+          Tegucigalpa
+         </div>
+         <div class="testimonial-stars"><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="testimonial-card"><span class="testimonial-quote">"</span>
+       <p class="testimonial-text">Muy profesionales. Me ayudaron a elegir el mejor router para mi negocio y la instalación fue rápida. Recomiendo 100% sus servicios.</p>
+       <div class="testimonial-author">
+        <div class="testimonial-avatar">
+         CL
+        </div>
+        <div>
+         <div class="testimonial-name">
+          Carlos López
+         </div>
+         <div class="testimonial-location">
+          San Pedro Sula
+         </div>
+         <div class="testimonial-stars"><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="testimonial-card"><span class="testimonial-quote">"</span>
+       <p class="testimonial-text">Tenía dudas de comprar en línea, pero el proceso fue super fácil por WhatsApp. Mi Samsung llegó sellado y con todos sus accesorios. ¡Volveré a comprar!</p>
+       <div class="testimonial-author">
+        <div class="testimonial-avatar">
+         AP
+        </div>
+        <div>
+         <div class="testimonial-name">
+          Ana Paz
+         </div>
+         <div class="testimonial-location">
+          La Ceiba
+         </div>
+         <div class="testimonial-stars"><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- ==================== CATALOG SECTION ==================== -->
+  <section class="section" id="catalog-section">
+   <div class="catalog">
+    <div class="catalog-header">
+     <h2 class="section-title">Catálogo de Productos</h2>
+     <p class="section-subtitle">Encuentra el equipo perfecto para ti. Todos con garantía y envío a todo Honduras.</p>
+     <div class="catalog-filters">
+      <div class="search-box">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+       </svg><input type="text" id="search-input" placeholder="Buscar por modelo, marca..." oninput="filterProducts()">
+      </div>
+      <div class="filter-group"><select class="filter-select" id="brand-filter" onchange="filterProducts()"> <option value="">Todas las marcas</option> <option value="Apple">Apple</option> <option value="Samsung">Samsung</option> <option value="Xiaomi">Xiaomi</option> <option value="Huawei">Huawei</option> <option value="Motorola">Motorola</option> </select> <select class="filter-select" id="year-filter" onchange="filterProducts()"> <option value="">Todos los años</option> <option value="2024">2024</option> <option value="2023">2023</option> <option value="2022">2022</option> </select> <select class="filter-select" id="price-filter" onchange="filterProducts()"> <option value="">Todos los precios</option> <option value="0-5000">Hasta L. 5,000</option> <option value="5000-10000">L. 5,000 - L. 10,000</option> <option value="10000-20000">L. 10,000 - L. 20,000</option> <option value="20000-999999">Más de L. 20,000</option> </select>
+      </div>
+     </div>
+     <p class="catalog-results">Mostrando <span id="results-count">0</span> productos</p>
+    </div>
+    <div class="catalog-grid" id="catalog-grid"><!-- Products will be loaded dynamically -->
+    </div>
+   </div>
+  </section><!-- ==================== CART SECTION ==================== -->
+  <section class="section" id="cart-section">
+   <div class="cart-section">
+    <div class="cart-content">
+     <h2 class="section-title">Tu Carrito</h2>
+     <p class="section-subtitle">Revisa tu selección antes de solicitar cotización</p>
+     <div id="cart-container"><!-- Cart items will be loaded dynamically -->
+     </div>
+    </div>
+   </div>
+  </section><!-- ==================== CONTACT SECTION ==================== -->
+  <section class="section" id="contact-section">
+   <div class="contact">
+    <div class="contact-content">
+     <div class="contact-info">
+      <div>
+       <h2 class="section-title" style="text-align: left;">Contáctanos</h2>
+       <h3>Estamos aquí para ayudarte</h3>
+       <p>¿Tienes preguntas sobre algún producto? ¿Necesitas asesoría personalizada? ¿Quieres hacer un pedido especial? Contáctanos por cualquiera de nuestros canales y te responderemos lo más pronto posible.</p>
+      </div>
+      <div class="contact-methods"><a href="https://wa.me/50497422946?text=Hola%20%F0%9F%91%8B%20Quisiera%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="contact-method" style="text-decoration: none;">
+        <div class="contact-method-icon">
+         💬
+        </div>
+        <div class="contact-method-text">
+         <h4>WhatsApp</h4>
+         <p>+504 9742-2946</p>
+        </div></a>
+       <div class="contact-method">
+        <div class="contact-method-icon">
+         📞
+        </div>
+        <div class="contact-method-text">
+         <h4>Teléfono</h4>
+         <p>+504 9742-2946</p>
+        </div>
+       </div>
+       <div class="contact-method">
+        <div class="contact-method-icon">
+         📧
+        </div>
+        <div class="contact-method-text">
+         <h4>Email</h4>
+         <p>ventas@clarohn.com</p>
+        </div>
+       </div>
+       <div class="contact-method">
+        <div class="contact-method-icon">
+         📍
+        </div>
+        <div class="contact-method-text">
+         <h4>Ubicación</h4>
+         <p>Tegucigalpa, Honduras</p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="contact-form-container">
+      <form class="contact-form" id="contact-form" onsubmit="handleContactSubmit(event)">
+       <h3>Envíanos un mensaje</h3>
+       <div class="form-group"><label for="contact-name">Nombre completo</label> <input type="text" id="contact-name" name="name" required placeholder="Tu nombre">
+       </div>
+       <div class="form-group"><label for="contact-phone">Teléfono / WhatsApp</label> <input type="tel" id="contact-phone" name="phone" required placeholder="+504 0000-0000">
+       </div>
+       <div class="form-group"><label for="contact-subject">Asunto</label> <select id="contact-subject" name="subject" required> <option value="">Selecciona una opción</option> <option value="Cotización de celular">Cotización de celular</option> <option value="Información de productos">Información de productos</option> <option value="Pedido especial">Pedido especial</option> <option value="Soporte técnico">Soporte técnico</option> <option value="Otro">Otro</option> </select>
+       </div>
+       <div class="form-group"><label for="contact-message">Mensaje</label> <textarea id="contact-message" name="message" required placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+       </div>
+       <div class="contact-buttons"><button type="submit" class="btn btn-primary" style="flex: 1;"> Enviar Mensaje 
+         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+         </svg></button> <a href="https://wa.me/50497422946?text=Hola%20%F0%9F%91%8B%20Quisiera%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="flex: 1;"> <span>💬</span> <span>WhatsApp Directo</span> </a>
+       </div>
+      </form>
+     </div>
+    </div>
+   </div>
+  </section><!-- ==================== CELULARES SECTION ==================== -->
+  <section class="section" id="celulares-section">
+   <div class="catalog">
+    <div class="catalog-header">
+     <h2 class="section-title">📱 Celulares</h2>
+     <p class="section-subtitle">Los mejores smartphones de todas las marcas con garantía y envío a todo Honduras</p>
+     <div class="catalog-filters">
+      <div class="search-box">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+       </svg><input type="text" id="search-celulares" placeholder="Buscar celulares..." oninput="filterByCategory('celulares')">
+      </div>
+      <div class="filter-group"><select class="filter-select" id="brand-celulares" onchange="filterByCategory('celulares')"> <option value="">Todas las marcas</option> <option value="Apple">Apple</option> <option value="Samsung">Samsung</option> <option value="Xiaomi">Xiaomi</option> <option value="Huawei">Huawei</option> <option value="Motorola">Motorola</option> </select> <select class="filter-select" id="price-celulares" onchange="filterByCategory('celulares')"> <option value="">Todos los precios</option> <option value="0-5000">Hasta L. 5,000</option> <option value="5000-10000">L. 5,000 - L. 10,000</option> <option value="10000-20000">L. 10,000 - L. 20,000</option> <option value="20000-999999">Más de L. 20,000</option> </select>
+      </div>
+     </div>
+    </div>
+    <div class="catalog-grid" id="celulares-grid"></div>
+    <div style="text-align: center; margin-top: 48px;"><a href="https://wa.me/50497422946?text=Hola%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20celulares" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"> <span>💬</span> <span>Consultar Disponibilidad</span> </a>
+    </div>
+   </div>
+  </section><!-- ==================== INTERNET SECTION ==================== -->
+  <section class="section" id="internet-section">
+   <div class="catalog">
+    <div class="catalog-header">
+     <h2 class="section-title">📶 Internet</h2>
+     <p class="section-subtitle">Paquetes de internet hogar y móvil, routers y módems de alta velocidad</p>
+    </div>
+    <div class="catalog-grid" id="internet-grid"></div>
+    <div class="benefits" style="padding-top: 40px;">
+     <div class="container">
+      <h3 class="section-title" style="font-size: 1.8rem;">Planes de Internet</h3>
+      <div class="benefits-grid">
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         🏠
+        </div>
+        <h3 class="benefit-title">Internet Hogar 50MB</h3>
+        <p class="benefit-text">Perfecto para navegar y streaming básico</p>
+        <div style="margin-top: 16px; font-size: 2rem; font-weight: 800; color: var(--claro-red);">
+         L. 499/mes
+        </div>
+       </div>
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         ⚡
+        </div>
+        <h3 class="benefit-title">Internet Hogar 100MB</h3>
+        <p class="benefit-text">Ideal para familias y trabajo desde casa</p>
+        <div style="margin-top: 16px; font-size: 2rem; font-weight: 800; color: var(--claro-red);">
+         L. 699/mes
+        </div>
+       </div>
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         🚀
+        </div>
+        <h3 class="benefit-title">Internet Hogar 200MB</h3>
+        <p class="benefit-text">Máxima velocidad para gaming y streaming 4K</p>
+        <div style="margin-top: 16px; font-size: 2rem; font-weight: 800; color: var(--claro-red);">
+         L. 999/mes
+        </div>
+       </div>
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         📱
+        </div>
+        <h3 class="benefit-title">Internet Móvil</h3>
+        <p class="benefit-text">Paquetes desde 5GB hasta ilimitado</p>
+        <div style="margin-top: 16px; font-size: 2rem; font-weight: 800; color: var(--claro-red);">
+         Desde L. 150
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div style="text-align: center; margin-top: 48px;"><a href="https://wa.me/50497422946?text=Hola%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20planes%20de%20internet" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"> <span>💬</span> <span>Solicitar Instalación</span> </a>
+    </div>
+   </div>
+  </section><!-- ==================== RECARGAS SECTION ==================== -->
+  <section class="section" id="recargas-section">
+   <div class="catalog">
+    <div class="catalog-header">
+     <h2 class="section-title">💰 Recargas</h2>
+     <p class="section-subtitle">Recargas y super recargas Claro con los mejores beneficios</p>
+    </div>
+    <div class="benefits">
+     <div class="container">
+      <div class="benefits-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         📞
+        </div>
+        <h3 class="benefit-title">Recarga L. 20</h3>
+        <p class="benefit-text">50 minutos Claro + 50 SMS</p>
+        <div style="margin-top: 12px; font-size: 0.9rem; color: var(--gray-500);">
+         Vigencia: 3 días
+        </div>
+       </div>
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         💬
+        </div>
+        <h3 class="benefit-title">Recarga L. 50</h3>
+        <p class="benefit-text">150 minutos + 500MB + WhatsApp gratis</p>
+        <div style="margin-top: 12px; font-size: 0.9rem; color: var(--gray-500);">
+         Vigencia: 7 días
+        </div>
+       </div>
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         🌐
+        </div>
+        <h3 class="benefit-title">Super Recarga L. 100</h3>
+        <p class="benefit-text">Minutos ilimitados + 3GB + Redes sociales</p>
+        <div style="margin-top: 12px; font-size: 0.9rem; color: var(--gray-500);">
+         Vigencia: 15 días
+        </div>
+       </div>
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         ⭐
+        </div>
+        <h3 class="benefit-title">Super Recarga L. 200</h3>
+        <p class="benefit-text">Ilimitado todo + 10GB + Spotify Premium</p>
+        <div style="margin-top: 12px; font-size: 0.9rem; color: var(--gray-500);">
+         Vigencia: 30 días
+        </div>
+       </div>
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         🎯
+        </div>
+        <h3 class="benefit-title">Paquete 1GB</h3>
+        <p class="benefit-text">1GB de datos para navegar</p>
+        <div style="margin-top: 12px; font-size: 0.9rem; color: var(--gray-500);">
+         L. 50 - 7 días
+        </div>
+       </div>
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         🚀
+        </div>
+        <h3 class="benefit-title">Paquete 5GB</h3>
+        <p class="benefit-text">5GB de datos de alta velocidad</p>
+        <div style="margin-top: 12px; font-size: 0.9rem; color: var(--gray-500);">
+         L. 150 - 15 días
+        </div>
+       </div>
+      </div>
+      <div style="text-align: center; margin-top: 48px;"><a href="https://wa.me/50497422946?text=Hola%20%F0%9F%91%8B%20Quiero%20hacer%20una%20recarga" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="display: inline-flex;"> <span>💬</span> <span>Recargar Ahora</span> </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- ==================== ENTRETENIMIENTO SECTION ==================== -->
+  <section class="section" id="entretenimiento-section">
+   <div class="catalog">
+    <div class="catalog-header">
+     <h2 class="section-title">🎮 Entretenimiento</h2>
+     <p class="section-subtitle">Claro Video, Claro Música y más servicios de entretenimiento digital</p>
+    </div>
+    <div class="benefits">
+     <div class="container">
+      <div class="services-grid">
+       <div class="service-card">
+        <div class="service-icon">
+         🎬
+        </div>
+        <h3 class="service-title">Claro Video</h3>
+        <p class="service-desc">Miles de películas y series. Desde L. 99/mes</p>
+        <div style="margin-top: 16px;"><a href="https://wa.me/50497422946?text=Quiero%20suscribirme%20a%20Claro%20Video" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.9rem; padding: 10px 20px;"> Suscribirme </a>
+        </div>
+       </div>
+       <div class="service-card light">
+        <div class="service-icon">
+         🎵
+        </div>
+        <h3 class="service-title">Claro Música</h3>
+        <p class="service-desc">Música ilimitada sin publicidad. L. 79/mes</p>
+        <div style="margin-top: 16px;"><a href="https://wa.me/50497422946?text=Quiero%20suscribirme%20a%20Claro%20M%C3%BAsica" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.9rem; padding: 10px 20px;"> Suscribirme </a>
+        </div>
+       </div>
+       <div class="service-card">
+        <div class="service-icon">
+         📺
+        </div>
+        <h3 class="service-title">TV por Cable</h3>
+        <p class="service-desc">Más de 100 canales HD. Desde L. 299/mes</p>
+        <div style="margin-top: 16px;"><a href="https://wa.me/50497422946?text=Quiero%20informaci%C3%B3n%20sobre%20TV%20Cable" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.9rem; padding: 10px 20px;"> Contratar </a>
+        </div>
+       </div>
+       <div class="service-card light">
+        <div class="service-icon">
+         🎮
+        </div>
+        <h3 class="service-title">Gaming</h3>
+        <p class="service-desc">Paquetes especiales para gamers con baja latencia</p>
+        <div style="margin-top: 16px;"><a href="https://wa.me/50497422946?text=Quiero%20informaci%C3%B3n%20sobre%20planes%20Gaming" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.9rem; padding: 10px 20px;"> Consultar </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- ==================== ACCESORIOS SECTION ==================== -->
+  <section class="section" id="accesorios-section">
+   <div class="catalog">
+    <div class="catalog-header">
+     <h2 class="section-title">🔌 Accesorios</h2>
+     <p class="section-subtitle">Cables, cargadores, audífonos, fundas y más accesorios originales</p>
+    </div>
+    <div class="catalog-grid" id="accesorios-grid"></div>
+    <div style="text-align: center; margin-top: 48px;"><a href="https://wa.me/50497422946?text=Hola%20%F0%9F%91%8B%20Quiero%20informaci%C3%B3n%20sobre%20accesorios" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"> <span>💬</span> <span>Ver Más Accesorios</span> </a>
+    </div>
+   </div>
+  </section><!-- ==================== HOGAR SECTION ==================== -->
+  <section class="section" id="hogar-section">
+   <div class="catalog">
+    <div class="catalog-header">
+     <h2 class="section-title">🏠 Hogar</h2>
+     <p class="section-subtitle">Soluciones completas de conectividad para tu hogar</p>
+    </div>
+    <div class="catalog-grid" id="hogar-grid"></div>
+    <div class="benefits" style="padding-top: 40px;">
+     <div class="container">
+      <h3 class="section-title" style="font-size: 1.8rem;">Paquetes Hogar</h3>
+      <div class="benefits-grid">
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         📦
+        </div>
+        <h3 class="benefit-title">Pack Básico</h3>
+        <p class="benefit-text">Internet 50MB + Línea móvil ilimitada</p>
+        <div style="margin-top: 16px; font-size: 2rem; font-weight: 800; color: var(--claro-red);">
+         L. 699/mes
+        </div>
+       </div>
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         ⭐
+        </div>
+        <h3 class="benefit-title">Pack Premium</h3>
+        <p class="benefit-text">Internet 100MB + TV + 2 líneas móviles</p>
+        <div style="margin-top: 16px; font-size: 2rem; font-weight: 800; color: var(--claro-red);">
+         L. 1,299/mes
+        </div>
+       </div>
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         💎
+        </div>
+        <h3 class="benefit-title">Pack Total</h3>
+        <p class="benefit-text">Internet 200MB + TV Premium + 4 líneas + Streaming</p>
+        <div style="margin-top: 16px; font-size: 2rem; font-weight: 800; color: var(--claro-red);">
+         L. 1,999/mes
+        </div>
+       </div>
+      </div>
+      <div style="text-align: center; margin-top: 48px;"><a href="https://wa.me/50497422946?text=Quiero%20informaci%C3%B3n%20sobre%20paquetes%20hogar" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="display: inline-flex;"> <span>💬</span> <span>Contratar Pack</span> </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- ==================== PAGOS SECTION ==================== -->
+  <section class="section" id="pagos-section">
+   <div class="catalog">
+    <div class="catalog-header">
+     <h2 class="section-title">💳 Pagos</h2>
+     <p class="section-subtitle">Paga tus servicios Claro de forma fácil y segura</p>
+    </div>
+    <div class="benefits">
+     <div class="container">
+      <div class="benefits-grid">
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         📱
+        </div>
+        <h3 class="benefit-title">Pagar Recibo</h3>
+        <p class="benefit-text">Paga tu factura mensual de forma rápida y segura</p>
+        <div style="margin-top: 16px;"><a href="https://wa.me/50497422946?text=Quiero%20pagar%20mi%20recibo%20Claro" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.9rem; padding: 10px 20px; display: inline-flex;"> Pagar Ahora </a>
+        </div>
+       </div>
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         💰
+        </div>
+        <h3 class="benefit-title">Métodos de Pago</h3>
+        <p class="benefit-text">Transferencia bancaria, depósito, efectivo o tarjeta</p>
+       </div>
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         📄
+        </div>
+        <h3 class="benefit-title">Consultar Factura</h3>
+        <p class="benefit-text">Revisa tu saldo y consumo actualizado</p>
+        <div style="margin-top: 16px;"><a href="https://wa.me/50497422946?text=Quiero%20consultar%20mi%20factura" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.9rem; padding: 10px 20px; display: inline-flex;"> Consultar </a>
+        </div>
+       </div>
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         🔄
+        </div>
+        <h3 class="benefit-title">Pago Automático</h3>
+        <p class="benefit-text">Configura pagos automáticos y olvídate de fechas</p>
+        <div style="margin-top: 16px;"><a href="https://wa.me/50497422946?text=Quiero%20activar%20pago%20autom%C3%A1tico" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.9rem; padding: 10px 20px; display: inline-flex;"> Activar </a>
+        </div>
+       </div>
+      </div>
+      <div style="background: rgba(218, 41, 28, 0.05); padding: 32px; border-radius: var(--border-radius-lg); margin-top: 48px; text-align: center;">
+       <h3 style="font-size: 1.5rem; color: var(--gray-900); margin-bottom: 16px;">💡 ¿Necesitas ayuda para pagar?</h3>
+       <p style="color: var(--gray-600); margin-bottom: 24px;">Nuestro equipo está disponible 24/7 para asistirte con cualquier duda sobre tu pago</p><a href="https://wa.me/50497422946?text=Necesito%20ayuda%20con%20mi%20pago" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="display: inline-flex;"> <span>💬</span> <span>Contactar Soporte</span> </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- ==================== SOPORTE SECTION ==================== -->
+  <section class="section" id="soporte-section">
+   <div class="catalog">
+    <div class="catalog-header">
+     <h2 class="section-title">🛠️ Soporte Técnico</h2>
+     <p class="section-subtitle">Asistencia técnica y servicio al cliente disponible 24/7</p>
+    </div>
+    <div class="benefits">
+     <div class="container">
+      <div class="benefits-grid">
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         📞
+        </div>
+        <h3 class="benefit-title">Soporte Telefónico</h3>
+        <p class="benefit-text">Llámanos al +504 9742-2946</p>
+        <p style="margin-top: 8px; color: var(--claro-red); font-weight: 600;">24 horas, 7 días</p>
+       </div>
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         💬
+        </div>
+        <h3 class="benefit-title">Chat en Vivo</h3>
+        <p class="benefit-text">Respuesta inmediata por WhatsApp</p>
+        <div style="margin-top: 16px;"><a href="https://wa.me/50497422946?text=Necesito%20soporte%20t%C3%A9cnico" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="font-size: 0.9rem; padding: 10px 20px; display: inline-flex;"> <span>💬</span> <span>Chatear</span> </a>
+        </div>
+       </div>
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         🔧
+        </div>
+        <h3 class="benefit-title">Asistencia Técnica</h3>
+        <p class="benefit-text">Configuración, instalación y reparaciones</p>
+       </div>
+       <div class="benefit-card">
+        <div class="benefit-icon">
+         ❓
+        </div>
+        <h3 class="benefit-title">Preguntas Frecuentes</h3>
+        <p class="benefit-text">Encuentra respuestas rápidas a dudas comunes</p>
+       </div>
+      </div>
+      <div style="margin-top: 60px;">
+       <h3 class="section-title" style="font-size: 1.8rem;">Preguntas Frecuentes</h3>
+       <div style="max-width: 800px; margin: 0 auto;">
+        <div class="benefit-card" style="text-align: left; margin-bottom: 16px;">
+         <h4 style="font-size: 1.1rem; color: var(--claro-red); margin-bottom: 8px;">¿Cómo activo mi chip Claro?</h4>
+         <p style="color: var(--gray-600);">Inserta el chip en tu celular, marca *611 y sigue las instrucciones. También puedes contactarnos para asistencia.</p>
+        </div>
+        <div class="benefit-card" style="text-align: left; margin-bottom: 16px;">
+         <h4 style="font-size: 1.1rem; color: var(--claro-red); margin-bottom: 8px;">¿Los celulares tienen garantía?</h4>
+         <p style="color: var(--gray-600);">Sí, todos nuestros celulares incluyen garantía de 6 a 12 meses según el modelo. Garantía escrita y respaldo total.</p>
+        </div>
+        <div class="benefit-card" style="text-align: left; margin-bottom: 16px;">
+         <h4 style="font-size: 1.1rem; color: var(--claro-red); margin-bottom: 8px;">¿Hacen envíos a todo Honduras?</h4>
+         <p style="color: var(--gray-600);">Sí, realizamos envíos seguros a todas las ciudades de Honduras. El costo varía según la ubicación.</p>
+        </div>
+        <div class="benefit-card" style="text-align: left; margin-bottom: 16px;">
+         <h4 style="font-size: 1.1rem; color: var(--claro-red); margin-bottom: 8px;">¿Qué formas de pago aceptan?</h4>
+         <p style="color: var(--gray-600);">Aceptamos transferencias bancarias, depósitos, efectivo y tarjetas. También ofrecemos planes de financiamiento.</p>
+        </div>
+        <div class="benefit-card" style="text-align: left;">
+         <h4 style="font-size: 1.1rem; color: var(--claro-red); margin-bottom: 8px;">¿Cómo reclamo mi garantía?</h4>
+         <p style="color: var(--gray-600);">Contáctanos por WhatsApp o teléfono con tu número de orden y descripción del problema. Te guiaremos en el proceso.</p>
+        </div>
+       </div>
+      </div>
+      <div style="text-align: center; margin-top: 60px;">
+       <h3 style="font-size: 1.5rem; color: var(--gray-900); margin-bottom: 16px;">¿No encontraste tu respuesta?</h3>
+       <p style="color: var(--gray-600); margin-bottom: 24px;">Nuestro equipo de soporte está listo para ayudarte</p><a href="https://wa.me/50497422946?text=Tengo%20una%20consulta" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="display: inline-flex;"> <span>💬</span> <span>Contactar Soporte</span> </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+   <div class="footer-content">
+    <div class="footer-brand">
+     <div class="footer-logo">
+      <div class="footer-logo-icon">
+       🇭🇳
+      </div><span class="footer-logo-text">Claro HN</span>
+     </div>
+     <p class="footer-desc">Tu tienda de confianza en celulares importados y tecnología. Más de 5 años conectando Honduras al mundo.</p>
+     <div class="footer-social"><a href="#" aria-label="Facebook">📘</a> <a href="#" aria-label="Instagram">📸</a> <a href="https://wa.me/50497422946" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">💬</a> <a href="#" aria-label="TikTok">🎵</a>
+     </div>
+    </div>
+    <div class="footer-section">
+     <h4>Navegación</h4>
+     <ul class="footer-links">
+      <li><a href="#" onclick="navigateTo('home'); return false;">Inicio</a></li>
+      <li><a href="#" onclick="navigateTo('about'); return false;">Quiénes Somos</a></li>
+      <li><a href="#" onclick="navigateTo('catalog'); return false;">Catálogo</a></li>
+      <li><a href="#" onclick="navigateTo('contact'); return false;">Contacto</a></li>
+     </ul>
+    </div>
+    <div class="footer-section">
+     <h4>Servicios</h4>
+     <ul class="footer-links">
+      <li><a href="#" onclick="navigateTo('catalog'); return false;">Celulares</a></li>
+      <li><a href="#" onclick="navigateTo('catalog'); return false;">Routers</a></li>
+      <li><a href="#" onclick="navigateTo('catalog'); return false;">Accesorios</a></li>
+      <li><a href="#" onclick="navigateTo('contact'); return false;">Soporte</a></li>
+     </ul>
+    </div>
+    <div class="footer-section">
+     <h4>Contacto</h4>
+     <ul class="footer-links">
+      <li>📞 +504 9742-2946</li>
+      <li>📧 ventas@clarohn.com</li>
+      <li>📍 Tegucigalpa, Honduras</li>
+      <li>⏰ Lun - Sáb: 8am - 6pm</li>
+     </ul>
+    </div>
+   </div>
+   <div class="footer-bottom">
+    <p>© 2024 <a href="#" onclick="navigateTo('home'); return false;">Claro Honduras</a>. Todos los derechos reservados. 🇭🇳</p>
+   </div>
+  </footer><!-- Floating WhatsApp Button -->
+  <div class="whatsapp-float"><span class="whatsapp-tooltip">¿Necesitas ayuda?</span> <a href="https://wa.me/50497422946?text=Hola%20%F0%9F%91%8B%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp"> 💬 </a>
+  </div><!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+  <script>
+        // ==================== CONFIGURATION ====================
+        const defaultConfig = {
+            hero_title: 'Conecta tu mundo con Claro Honduras',
+            hero_subtitle: 'Los mejores celulares importados, routers, cables y accesorios tecnológicos con garantía y los precios más competitivos del mercado.',
+            whatsapp_number: '50497422946'
+        };
+
+        let config = { ...defaultConfig };
+
+        // ==================== PRODUCTS DATABASE ====================
+        const products = [
+            {
+                id: 'IP15PM-256',
+                name: 'iPhone 15 Pro Max',
+                brand: 'Apple',
+                year: 2024,
+                price: 32500,
+                specs: ['256GB', 'Titanio Natural', 'A17 Pro'],
+                image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch_GEO_US?wid=320',
+                badge: 'imported',
+                description: 'El iPhone más potente jamás creado. Chip A17 Pro, cámara de 48MP y diseño en titanio.'
+            },
+            {
+                id: 'IP15-128',
+                name: 'iPhone 15',
+                brand: 'Apple',
+                year: 2024,
+                price: 24500,
+                specs: ['128GB', 'Rosa', 'A16 Bionic'],
+                image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch_GEO_US?wid=320',
+                badge: 'available',
+                description: 'Dynamic Island, cámara de 48MP y USB-C. El iPhone que todos quieren.'
+            },
+            {
+                id: 'S24U-512',
+                name: 'Samsung Galaxy S24 Ultra',
+                brand: 'Samsung',
+                year: 2024,
+                price: 29999,
+                specs: ['512GB', 'Titanio Negro', 'Snapdragon 8 Gen 3'],
+                image: 'https://images.samsung.com/is/image/samsung/p6pim/latin_en/2401/gallery/latin-en-galaxy-s24-sm-s928bzketel-thumb-539572757',
+                badge: 'imported',
+                description: 'El Galaxy más avanzado con Galaxy AI, S Pen integrado y cámara de 200MP.'
+            },
+            {
+                id: 'S24-256',
+                name: 'Samsung Galaxy S24',
+                brand: 'Samsung',
+                year: 2024,
+                price: 21500,
+                specs: ['256GB', 'Violeta', 'Exynos 2400'],
+                image: 'https://images.samsung.com/is/image/samsung/p6pim/latin_en/2401/gallery/latin-en-galaxy-s24-sm-s921bzvetel-thumb-539572719',
+                badge: 'available',
+                description: 'Galaxy AI integrada, pantalla Dynamic AMOLED 2X y diseño premium.'
+            },
+            {
+                id: 'XM14U-512',
+                name: 'Xiaomi 14 Ultra',
+                brand: 'Xiaomi',
+                year: 2024,
+                price: 23999,
+                specs: ['512GB', 'Negro', 'Snapdragon 8 Gen 3'],
+                image: 'https://i02.appmifile.com/mi-com-product/fly-birds/xiaomi-14-ultra/pc/1708513789054.png',
+                badge: 'imported',
+                description: 'Cámara Leica de nivel profesional, pantalla AMOLED 2K y carga ultra rápida.'
+            },
+            {
+                id: 'XM-NOTE13',
+                name: 'Xiaomi Redmi Note 13 Pro',
+                brand: 'Xiaomi',
+                year: 2024,
+                price: 7999,
+                specs: ['256GB', 'Azul', 'MediaTek Dimensity'],
+                image: 'https://i02.appmifile.com/mi-com-product/fly-birds/redmi-note-13-pro-5g-in/sku/pc/1692606649936.png',
+                badge: 'available',
+                description: 'Cámara de 200MP, pantalla AMOLED 120Hz. Calidad premium a precio accesible.'
+            },
+            {
+                id: 'HW-P60',
+                name: 'Huawei P60 Pro',
+                brand: 'Huawei',
+                year: 2023,
+                price: 18500,
+                specs: ['256GB', 'Verde Perla', 'Kirin'],
+                image: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p60-pro/images/green-pc.png',
+                badge: 'imported',
+                description: 'Fotografía XMAGE revolucionaria, diseño elegante y batería de larga duración.'
+            },
+            {
+                id: 'MOTO-EDGE40',
+                name: 'Motorola Edge 40 Pro',
+                brand: 'Motorola',
+                year: 2023,
+                price: 14999,
+                specs: ['256GB', 'Negro Eclipse', 'Snapdragon 8 Gen 2'],
+                image: 'https://motorolaau.vtexassets.com/arquivos/ids/158163-1200-auto?v=638149108116500000',
+                badge: 'available',
+                description: 'Pantalla pOLED curva 165Hz, carga TurboPower 125W y diseño premium.'
+            },
+            {
+                id: 'ROUTER-TP01',
+                name: 'Router TP-Link Archer AX73',
+                brand: 'TP-Link',
+                year: 2023,
+                price: 3499,
+                specs: ['WiFi 6', 'Gigabit', '4 Antenas'],
+                image: 'https://static.tp-link.com/upload/image-line/Archer-AX73_normal_20201029.png',
+                badge: 'available',
+                description: 'Router WiFi 6 de alta velocidad, cobertura amplia para todo el hogar.'
+            },
+            {
+                id: 'ROUTER-TP02',
+                name: 'Router TP-Link Deco M5',
+                brand: 'TP-Link',
+                year: 2023,
+                price: 4299,
+                specs: ['Mesh WiFi', '3-Pack', 'Hasta 500m²'],
+                image: 'https://static.tp-link.com/upload/image-line/Deco%20M5_normal_20161202.png',
+                badge: 'available',
+                description: 'Sistema mesh para cobertura total. Ideal para casas grandes.'
+            },
+            {
+                id: 'CABLE-USB01',
+                name: 'Cable USB-C a Lightning',
+                brand: 'Apple',
+                year: 2024,
+                price: 649,
+                specs: ['1 Metro', 'Original', 'MFi Certified'],
+                image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MM0A3?wid=320',
+                badge: 'available',
+                description: 'Cable original Apple, carga rápida y transferencia de datos.'
+            },
+            {
+                id: 'CABLE-USB02',
+                name: 'Cable USB-C 100W',
+                brand: 'Samsung',
+                year: 2024,
+                price: 399,
+                specs: ['2 Metros', 'Super Fast', '100W'],
+                image: 'https://images.samsung.com/is/image/samsung/p6pim/latin_en/ep-dn975bbegus/gallery/latin-en-ep-dn975-306992-ep-dn975bbegus-thumb-393497920',
+                badge: 'available',
+                description: 'Cable de carga ultra rápida 100W, compatible con todos los dispositivos USB-C.'
+            }
+        ];
+
+        // ==================== CART STATE ====================
+        let cart = [];
+
+        // ==================== INITIALIZATION ====================
+        function init() {
+            loadCartFromStorage();
+            renderFeaturedProducts();
+            renderCatalog();
+            renderCategoryProducts();
+            updateCartUI();
+            setupScrollHeader();
+
+            // Initialize Element SDK if available
+            if (window.elementSdk) {
+                window.elementSdk.init({
+                    defaultConfig,
+                    onConfigChange: handleConfigChange,
+                    mapToCapabilities: () => ({
+                        recolorables: [],
+                        borderables: [],
+                        fontEditable: undefined,
+                        fontSizeable: undefined
+                    }),
+                    mapToEditPanelValues: (cfg) => new Map([
+                        ['hero_title', cfg.hero_title || defaultConfig.hero_title],
+                        ['hero_subtitle', cfg.hero_subtitle || defaultConfig.hero_subtitle],
+                        ['whatsapp_number', cfg.whatsapp_number || defaultConfig.whatsapp_number]
+                    ])
+                });
+            }
+        }
+
+        async function handleConfigChange(newConfig) {
+            config = { ...defaultConfig, ...newConfig };
+            
+            const heroTitle = document.getElementById('hero-title');
+            if (heroTitle && config.hero_title) {
+                heroTitle.innerHTML = config.hero_title.includes('Claro Honduras') 
+                    ? config.hero_title.replace('Claro Honduras', '<span class="hero-title-highlight">Claro Honduras</span>')
+                    : config.hero_title;
+            }
+
+            const heroSubtitle = document.getElementById('hero-subtitle');
+            if (heroSubtitle && config.hero_subtitle) {
+                heroSubtitle.textContent = config.hero_subtitle;
+            }
+        }
+
+        // ==================== NAVIGATION ====================
+        function navigateTo(section) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            
+            // Show target section
+            const targetSection = document.getElementById(`${section}-section`);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Update cart if navigating to cart
+            if (section === 'cart') {
+                renderCart();
+            }
+        }
+
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu-btn').classList.remove('active');
+            document.getElementById('mobile-nav').classList.remove('active');
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('mobile-nav').classList.toggle('active');
+        });
+
+        // ==================== SCROLL HEADER ====================
+        function setupScrollHeader() {
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // ==================== PRODUCT RENDERING ====================
+        function createProductCard(product) {
+            const badgeText = product.badge === 'imported' ? 'Importado' : 'Disponible';
+            const badgeClass = product.badge === 'imported' ? 'imported' : '';
+
+            return `
+                <div class="product-card" data-product-id="${product.id}">
+                    <span class="product-badge ${badgeClass}">${badgeText}</span>
+                    <div class="product-image-container">
+                        <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy" onerror="this.style.background='linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%)'; this.alt='Imagen no disponible'; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%23f0f0f0%22 width=%22100%22 height=%22100%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 fill=%22%23999%22 font-size=%2212%22>📱</text></svg>';">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary" onclick="addToCart('${product.id}')">
+                                Agregar
+                            </button>
+                            <a href="https://wa.me/${config.whatsapp_number || defaultConfig.whatsapp_number}?text=${encodeURIComponent(`Hola 😊 Me interesa el ${product.name} (${product.specs.join(', ')}) a L. ${product.price.toLocaleString()}. ¿Está disponible?`)}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                                💬
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">${product.brand}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <div class="product-specs">
+                            ${product.specs.map(spec => `<span class="product-spec">${spec}</span>`).join('')}
+                        </div>
+                        <div class="product-price-row">
+                            <div>
+                                <span class="product-price-currency">L. </span>
+                                <span class="product-price">${product.price.toLocaleString()}</span>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('${product.id}')" aria-label="Agregar al carrito">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderFeaturedProducts() {
+            const container = document.getElementById('featured-products');
+            const featured = products.filter(p => ['IP15PM-256', 'S24U-512', 'XM14U-512', 'XM-NOTE13', 'MOTO-EDGE40', 'ROUTER-TP01'].includes(p.id));
+            container.innerHTML = featured.map(p => createProductCard(p)).join('');
+        }
+
+        function renderCatalog() {
+            const container = document.getElementById('catalog-grid');
+            container.innerHTML = products.map(p => createProductCard(p)).join('');
+            document.getElementById('results-count').textContent = products.length;
+        }
+
+        function filterProducts() {
+            const search = document.getElementById('search-input').value.toLowerCase();
+            const brand = document.getElementById('brand-filter').value;
+            const year = document.getElementById('year-filter').value;
+            const priceRange = document.getElementById('price-filter').value;
+
+            let filtered = products.filter(product => {
+                const matchesSearch = product.name.toLowerCase().includes(search) || 
+                                     product.brand.toLowerCase().includes(search) ||
+                                     product.description.toLowerCase().includes(search);
+                const matchesBrand = !brand || product.brand === brand;
+                const matchesYear = !year || product.year.toString() === year;
+                
+                let matchesPrice = true;
+                if (priceRange) {
+                    const [min, max] = priceRange.split('-').map(Number);
+                    matchesPrice = product.price >= min && product.price <= max;
+                }
+
+                return matchesSearch && matchesBrand && matchesYear && matchesPrice;
+            });
+
+            const container = document.getElementById('catalog-grid');
+            
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <div class="no-results-icon">🔍</div>
+                        <h3>No encontramos resultados</h3>
+                        <p>Intenta con otros filtros o términos de búsqueda</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = filtered.map(p => createProductCard(p)).join('');
+            }
+
+            document.getElementById('results-count').textContent = filtered.length;
+        }
+
+        // ==================== CART FUNCTIONS ====================
+        function loadCartFromStorage() {
+            try {
+                const stored = localStorage.getItem('clarohn_cart');
+                if (stored) {
+                    cart = JSON.parse(stored);
+                }
+            } catch (e) {
+                cart = [];
+            }
+        }
+
+        function saveCartToStorage() {
+            try {
+                localStorage.setItem('clarohn_cart', JSON.stringify(cart));
+            } catch (e) {
+                console.error('Error saving cart:', e);
+            }
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    brand: product.brand,
+                    price: product.price,
+                    specs: product.specs,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+
+            saveCartToStorage();
+            updateCartUI();
+            showToast('success', `${product.name} agregado al carrito`);
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            saveCartToStorage();
+            updateCartUI();
+            renderCart();
+            showToast('success', 'Producto eliminado del carrito');
+        }
+
+        function updateQuantity(productId, change) {
+            const item = cart.find(i => i.id === productId);
+            if (!item) return;
+
+            item.quantity += change;
+            
+            if (item.quantity <= 0) {
+                removeFromCart(productId);
+                return;
+            }
+
+            saveCartToStorage();
+            updateCartUI();
+            renderCart();
+        }
+
+        function updateCartUI() {
+            const countEl = document.getElementById('cart-count');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            
+            if (totalItems > 0) {
+                countEl.style.display = 'flex';
+                countEl.textContent = totalItems;
+            } else {
+                countEl.style.display = 'none';
+            }
+        }
+
+        function renderCart() {
+            const container = document.getElementById('cart-container');
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="cart-empty">
+                        <div class="cart-empty-icon">🛒</div>
+                        <h3>Tu carrito está vacío</h3>
+                        <p>Explora nuestro catálogo y encuentra el celular perfecto para ti</p>
+                        <button class="btn btn-primary" onclick="navigateTo('catalog')">
+                            Ver Catálogo
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            container.innerHTML = `
+                <div class="cart-items">
+                    ${cart.map(item => `
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.style.background='#f0f0f0'; this.alt='📱';">
+                            </div>
+                            <div class="cart-item-details">
+                                <h4 class="cart-item-name">${item.name}</h4>
+                                <p class="cart-item-specs">${item.specs.join(' • ')}</p>
+                                <div class="cart-item-actions">
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn" onclick="updateQuantity('${item.id}', -1)" aria-label="Disminuir cantidad">−</button>
+                                        <span class="quantity-value">${item.quantity}</span>
+                                        <button class="quantity-btn" onclick="updateQuantity('${item.id}', 1)" aria-label="Aumentar cantidad">+</button>
+                                    </div>
+                                    <span class="cart-item-price">L. ${(item.price * item.quantity).toLocaleString()}</span>
+                                    <button class="remove-btn" onclick="removeFromCart('${item.id}')" aria-label="Eliminar producto">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <div class="cart-summary">
+                    <div class="cart-summary-row">
+                        <span class="cart-summary-label">Subtotal (${cart.reduce((s, i) => s + i.quantity, 0)} productos)</span>
+                        <span class="cart-summary-value">L. ${subtotal.toLocaleString()}</span>
+                    </div>
+                    <div class="cart-summary-row">
+                        <span class="cart-summary-label">Envío</span>
+                        <span class="cart-summary-value">Por cotizar</span>
+                    </div>
+                    <div class="cart-summary-row">
+                        <span class="cart-total-label">Total Referencial</span>
+                        <span class="cart-total-value">L. ${subtotal.toLocaleString()}</span>
+                    </div>
+                    <div class="cart-note">
+                        <strong>Nota:</strong> El precio final incluirá el costo de envío según tu ubicación. 
+                        Te confirmaremos disponibilidad y precio exacto por WhatsApp.
+                    </div>
+                    <div class="cart-actions">
+                        <button class="btn btn-secondary" onclick="navigateTo('catalog')">
+                            Seguir Comprando
+                        </button>
+                        <button class="btn btn-whatsapp" onclick="finishOrder()">
+                            <span>💬</span>
+                            <span>Finalizar Pedido</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ==================== CHECKOUT - WHATSAPP ====================
+        function finishOrder() {
+            if (cart.length === 0) {
+                showToast('error', 'Tu carrito está vacío');
+                return;
+            }
+
+            const whatsappNumber = config.whatsapp_number || defaultConfig.whatsapp_number;
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            // Build the product list
+            let productList = cart.map((item, index) => {
+                return `${index + 1}. ${item.name} (${item.specs.join(', ')}) x${item.quantity} - L. ${(item.price * item.quantity).toLocaleString()} [ID: ${item.id}]`;
+            }).join('\n');
+
+            // Build the WhatsApp message
+            const message = `Hola 😊 ¡Me interesa cotizar y conocer la disponibilidad de estos productos que vi en su web!
+
+📱 *MI PEDIDO:*
+${productList}
+
+💰 *TOTAL REFERENCIAL:* L. ${total.toLocaleString()}
+
+Me gustaría confirmar:
+✅ Disponibilidad de los productos
+✅ Precio final con envío
+✅ Formas de pago disponibles
+✅ Tiempo estimado de entrega
+
+¿Me confirmas disponibilidad y próximos pasos? 🙏
+
+¡Quedo atento/a! Gracias. 🇭🇳`;
+
+            // Encode and open WhatsApp
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        // ==================== CONTACT FORM ====================
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const name = form.querySelector('#contact-name').value;
+            const phone = form.querySelector('#contact-phone').value;
+            const subject = form.querySelector('#contact-subject').value;
+            const message = form.querySelector('#contact-message').value;
+
+            const whatsappNumber = config.whatsapp_number || defaultConfig.whatsapp_number;
+            
+            const whatsappMessage = `Hola 😊 Mi nombre es ${name}.
+
+📋 *ASUNTO:* ${subject}
+
+📝 *MENSAJE:*
+${message}
+
+📞 *Mi contacto:* ${phone}
+
+¡Espero su respuesta! Gracias. 🇭🇳`;
+
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+            
+            form.reset();
+            showToast('success', 'Redirigiendo a WhatsApp...');
+        }
+
+        // ==================== TOAST NOTIFICATIONS ====================
+        function showToast(type, message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = `
+                <span class="toast-icon">${type === 'success' ? '✅' : '❌'}</span>
+                <span class="toast-message">${message}</span>
+                <button class="toast-close" onclick="this.parentElement.remove()">×</button>
+            `;
+            container.appendChild(toast);
+
+            // Auto remove after 4 seconds
+            setTimeout(() => {
+                if (toast.parentElement) {
+                    toast.style.animation = 'slideIn 0.3s ease reverse';
+                    setTimeout(() => toast.remove(), 300);
+                }
+            }, 4000);
+        }
+
+        // ==================== CATEGORY RENDERING ====================
+        function renderCategoryProducts() {
+            // Celulares
+            const celulares = products.filter(p => 
+                ['IP15PM-256', 'IP15-128', 'S24U-512', 'S24-256', 'XM14U-512', 'XM-NOTE13', 'HW-P60', 'MOTO-EDGE40'].includes(p.id)
+            );
+            document.getElementById('celulares-grid').innerHTML = celulares.map(p => createProductCard(p)).join('');
+
+            // Internet (routers)
+            const internet = products.filter(p => ['ROUTER-TP01', 'ROUTER-TP02'].includes(p.id));
+            document.getElementById('internet-grid').innerHTML = internet.map(p => createProductCard(p)).join('');
+
+            // Accesorios (cables)
+            const accesorios = products.filter(p => ['CABLE-USB01', 'CABLE-USB02'].includes(p.id));
+            document.getElementById('accesorios-grid').innerHTML = accesorios.map(p => createProductCard(p)).join('');
+
+            // Hogar (routers for now)
+            const hogar = products.filter(p => ['ROUTER-TP01', 'ROUTER-TP02'].includes(p.id));
+            document.getElementById('hogar-grid').innerHTML = hogar.map(p => createProductCard(p)).join('');
+        }
+
+        function filterByCategory(category) {
+            const searchInput = document.getElementById(`search-${category}`);
+            const brandFilter = document.getElementById(`brand-${category}`);
+            const priceFilter = document.getElementById(`price-${category}`);
+
+            if (!searchInput) return;
+
+            const search = searchInput.value.toLowerCase();
+            const brand = brandFilter ? brandFilter.value : '';
+            const priceRange = priceFilter ? priceFilter.value : '';
+
+            let categoryProducts = [];
+            if (category === 'celulares') {
+                categoryProducts = products.filter(p => 
+                    ['IP15PM-256', 'IP15-128', 'S24U-512', 'S24-256', 'XM14U-512', 'XM-NOTE13', 'HW-P60', 'MOTO-EDGE40'].includes(p.id)
+                );
+            }
+
+            let filtered = categoryProducts.filter(product => {
+                const matchesSearch = product.name.toLowerCase().includes(search) || 
+                                     product.brand.toLowerCase().includes(search) ||
+                                     product.description.toLowerCase().includes(search);
+                const matchesBrand = !brand || product.brand === brand;
+                
+                let matchesPrice = true;
+                if (priceRange) {
+                    const [min, max] = priceRange.split('-').map(Number);
+                    matchesPrice = product.price >= min && product.price <= max;
+                }
+
+                return matchesSearch && matchesBrand && matchesPrice;
+            });
+
+            const container = document.getElementById(`${category}-grid`);
+            
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <div class="no-results-icon">🔍</div>
+                        <h3>No encontramos resultados</h3>
+                        <p>Intenta con otros filtros o términos de búsqueda</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = filtered.map(p => createProductCard(p)).join('');
+            }
+        }
+
+        // ==================== INITIALIZE APP ====================
+        init();
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c5e47053740cc25',t:'MTc2OTc0Nzg4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
